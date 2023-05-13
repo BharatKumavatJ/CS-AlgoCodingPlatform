@@ -79,7 +79,7 @@
         <div class="h-50">
           <label for="output" class="text-light my-2">Output</label>
 
-          <textarea type="text" class="form-control h-75" id="output" aria-label="Last name"></textarea>
+          <textarea type="text" class="form-control h-75" id="output" disabled aria-label="Last name" ></textarea>
         </div>
       </div>
       
@@ -152,7 +152,6 @@
             "lang": option.value
           }
 
-          console.log(codeInput)
 
           let oData = await fetch("http://localhost:8000/compile", {
             method: "POST",
@@ -164,7 +163,12 @@
           })
 
           var d = await oData.json()
-          output.value = d.output
+          
+          if(d.output){
+            output.value = d.output
+          } else if(d.error){
+            output.value = d.error
+          }
         })
 
       </script>
