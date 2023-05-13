@@ -1,0 +1,393 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+
+}
+
+
+@media (min-width: 3000px) {
+    html {
+      font-size: 200%;
+    }
+  }
+  
+  
+  
+  @media (min-width: 1930px) {
+    html {
+      font-size: 120%;
+    }
+  }
+  
+  @media (min-width: 2400px) {
+    html {
+      font-size: 140%;
+    }
+  }
+  
+  
+  @media (max-width: 1200px) {
+    html {
+      font-size: 95%;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    html {
+      font-size: 90%;
+    }
+  }
+  
+  /* MOBILE */
+  @media (max-width: 576px) and (min-width: 300px) {
+    html {
+      font-size: 70%;
+    }
+  }
+  
+  
+  @media (max-width: 300px) and (min-width: 100px) {
+    html {
+      font-size: 50%;
+    }
+  }
+  
+
+  
+header{
+    
+    background: radial-gradient(
+      63.13% 330.58% at 22.71% 49.94%,
+      #000011 0%,
+      #000000 100%
+    )
+}
+.container{
+    max-width: 76%;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+nav{
+    background-color: black;
+}
+
+.navbar-nav{
+    margin-left: auto;
+}
+
+.nav-item a{
+    margin-left: 4rem;
+    color: white !important;
+    float: right;
+}
+
+.heroSection{
+    padding-block: 5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline{
+    font-size: 2.1rem;
+    color: white;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 992px) {
+    
+    .headline{
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .get-started{
+        margin: 0px auto;
+    }
+}
+
+.get-started{
+    padding: .4rem 1rem;
+    
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    outline: none;
+    font-family: "Roboto";
+    margin-top: 4rem;
+    background:  radial-gradient(63.13% 330.58% at 22.71% 49.94%, #f42626 0%, #e00303 100%);
+  
+  }
+
+  .features {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    -webkit-box-shadow: 0 0.8rem 3.2rem 0 rgba(2,16,40,0.16);
+    box-shadow: 0 0.8rem 3.2rem 0 rgba(2,16,40,0.16);
+    padding-block: 3rem;
+    
+    margin-top: 3rem;
+}
+
+
+.features_heading{
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        padding-bottom: 3rem;
+
+}
+.f_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding-inline: 3rem ; */
+    border-radius: 10px;
+    width: 20em;
+    height: 15rem;
+    margin-inline: 1em ;
+    background-color: black;
+}
+
+.f_card:hover{
+  transform: scale(1.1);
+}
+
+.features_body{
+    display: flex;
+    row-gap: 2rem;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+}
+
+.f_para{
+    text-align: center;
+    color:white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-inline: 2rem;
+}
+
+.f_img{
+    height: 40%;
+}
+
+
+/* ---------Feature section over here  */
+
+.curriculum{
+  background: radial-gradient(
+    63.13% 330.58% at 22.71% 49.94%,
+    #000011 0%,
+    #000000 100%
+  );
+      padding-block: 2rem;
+
+      margin-top: 3rem;
+      color: white
+}
+
+.course_curriculm_heading{
+
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+
+
+}
+
+.mini-text-course{
+    text-align: center;
+    color: red;
+
+}
+
+.course_curr_body{
+    display: flex;
+    row-gap: 3rem;
+
+    margin-top: 2rem;
+}
+
+.course_button_container{
+    display: flex;
+    row-gap: 2rem;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+    justify-content: center;
+}
+
+.course_btn{
+    height: 3rem;
+    border: 2px solid white;
+    text-align: left;
+    border-radius: 10px;
+    padding-inline-start: 1rem;
+}   
+
+
+.course_btn{
+  height: 3rem;
+  border: 2px solid white;
+  text-align: left;
+  border-radius: 10px;
+  padding-inline-start: 1rem;
+  
+  /* display: inline-block; */
+  background: linear-gradient(to right, #f8b3b5 0%, #f8b3b5 50%, #ffffff 50%, #ffffff 100%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.9s;
+}
+
+.course_btn:hover{
+  background-position:0 0;
+}
+
+
+
+.course_desc{
+
+    width: 100%;
+    margin-left: 2rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+}
+
+.active{
+    background: rgb(191, 30, 43);
+    color: white;
+    font-weight: 600;
+}
+.module-head{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.module_sub_head{
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-decoration: underline;
+    
+}
+
+
+
+@media screen and (max-width: 992px) {
+    
+    .course_curr_body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+    }
+
+    .course_button_container{
+        width: 80% !important;
+    }
+    .course_desc{
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+/* ----------------- course module section over  */
+
+.tution_fees_heading{
+  margin-block: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+.fees_plans{
+  justify-content: space-around;
+  align-items: center;
+}
+.fees_plan{
+
+  background: #ffffff;
+  border-radius: 0.75rem;
+  -webkit-box-shadow: 0 0.8rem 3.2rem 0 rgba(2,16,40,0.16);
+  box-shadow: 0 0.8rem 3.2rem 0 rgba(2,16,40,0.16);
+  /* border: 2px solid darkblue; */
+  /* text-align: center; */
+  width: 25rem;
+}
+
+ul li{
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.fee_plan_head{
+  padding-block: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.fee_plan_head:nth-child(1){
+  background: radial-gradient(
+      63.13% 330.58% at 22.71% 49.94%,
+      #000011 0%,
+      #000000 100%
+    );
+
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+
+  font-size: 1.5rem;
+}
+
+
+.features_in_plan{
+  margin-top: 2rem;
+}
+
+
+
+.fees{
+  text-align: center;
+  background-color: rgb(203, 74, 84);
+
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: white;
+
+  
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+}
+
+/* ---------Registratioon start here --  */
+
+.register{
+  margin-top: 5rem;
+}
+.registration-heading{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 3rem;
+  
+}
