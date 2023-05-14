@@ -10,24 +10,31 @@ const options={ stats: true}
 compiler.init(options)
 
 
-app.use("/codemirror-5.65.13", express.static(path.join(__dirname, "./codemirror-5.65.13")))
+// app.use("/codemirror-5.65.13", express.static(path.join(__dirname, "./codemirror-5.65.13")))
+app.use("/", express.static(__dirname))
 app.get("/", function(req, res){
     
+    console.log("Root loaded")
+   
+    res.sendFile(path.join(__dirname,"./index.html"));
+})
 
-    compiler.flush( function() {
-        console.log("Context Deleted");
-    })
+app.get("/practice", function(req, res){
     res.sendFile(path.join(__dirname,"./editor.html"));
 })
 
+
+
+
 app.post("/compile", function(req, res){
+
+        compiler.flush( function() {
+            console.log("Context Deleted");
+        })
    
         let code = req.body.code
         let input = req.body.input
         let lang = req.body.lang
-
-        console.log("I hit" + lang)
-
         
         try{
             if(lang == 'python'){
@@ -49,7 +56,7 @@ app.post("/compile", function(req, res){
                 }else{
                     var envData = { OS : "windows"}; 
                     compiler.compilePython( envData , code , function(data){
-                        console.log('Error',JSON.stringify(data,null,4));
+                      
                         if(data.output){
                             res.json(data)
                         }else{
@@ -94,10 +101,10 @@ app.post("/compile", function(req, res){
                     });
                 }
             }else if(lang == 'cpp'){ // c++ compiler 
-                console.log('I am here in cpp')
+               
                 if(input){
 
-                    console.log("I hit cpp")
+                   
                     var envData = { OS : "windows",  cmd : "g++", options: {timeout: 10000}}; 
                    
                     compiler.compileCppWithInput( envData , code , input ,  function(data){
