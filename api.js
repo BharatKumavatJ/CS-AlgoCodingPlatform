@@ -21,6 +21,9 @@ app.get("/", function(req, res){
 
 app.get("/practice", function(req, res){
     res.sendFile(path.join(__dirname,"./editor.html"));
+    compiler.flush( function() {
+        console.log("Context Deleted");
+    })
 })
 
 
@@ -28,9 +31,7 @@ app.get("/practice", function(req, res){
 
 app.post("/compile", function(req, res){
 
-        compiler.flush( function() {
-            console.log("Context Deleted");
-        })
+       
    
         let code = req.body.code
         let input = req.body.input
@@ -101,16 +102,20 @@ app.post("/compile", function(req, res){
                     });
                 }
             }else if(lang == 'cpp'){ // c++ compiler 
+
+                
                
                 if(input){
 
                    
                     var envData = { OS : "windows",  cmd : "g++", options: {timeout: 10000}}; 
                    
-                    compiler.compileCppWithInput( envData , code , input ,  function(data){
+                    compiler.compileCPPWithInput( envData , code , input ,  function(data){
+
                         if(data.output){
                             res.send(data)
-                        }else{
+                        }
+                        else{
                            res.send(data.error)
                         }       
                     });
@@ -118,10 +123,13 @@ app.post("/compile", function(req, res){
                 }else{
 
                     var envData = { OS : "windows" , cmd : "g++", options: {timeout: 10000}}; 
-                    compiler.compileCpp( envData , code , function(data){
+                    compiler.compileCPP( envData , code , function(data){
+                        
+
                         if(data.output){
                             res.send(data)
-                        }else{
+                        }
+                        else{
                             res.send(data.error)
 
                         }
@@ -137,7 +145,8 @@ app.post("/compile", function(req, res){
          
 })
 
-app.listen(8000,'localhost',()=>{
+const port = process.env.PORT || 5000
+app.listen(port,'localhost',()=>{
     console.log("Server is running");
 })
 

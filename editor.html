@@ -104,10 +104,13 @@
         codeEditor.setSize(0.7 * width)
         codeEditor.setOption("mode", "text/normal")
 
-
-
-
         var option = document.getElementById("specificSizeSelect");
+
+
+        var inputBox = document.getElementById("input")
+        var outputBox = document.getElementById("output")
+        var run = document.getElementById("run")
+
 
         option.addEventListener("change", function(){
           
@@ -122,24 +125,28 @@
                         "    // start writing here..\n" +
                         "  }\n" +
                         "}");
+            inputBox.setValue(" ");
+            outputBox.setValue(" ");
            
 
           }else if(option.value == "cpp"){
             codeEditor.setOption("mode", "text/x-c++src")
             codeEditor.setValue('#include <iostream>\n\nint main() {\n    // Start writing here ..\n    return 0;\n}');
+            inputBox.setValue(" ");
+            outputBox.setValue(" ");
+
             
 
           }else{
             codeEditor.setOption("mode", "text/x-pyhton")
             codeEditor.setValue('# Start writing here ..');
+            inputBox.setValue(" ");
+            outputBox.setValue(" ");
             
           }
         })
 
 
-        let input = document.getElementById("input")
-        let output = document.getElementById("output")
-        let run = document.getElementById("run")
 
 
 
@@ -148,7 +155,7 @@
         run.addEventListener("click",async function(){
           codeInput={
             "code": codeEditor.getValue(),
-            "input": input.value,
+            "input": inputBox.value,
             "lang": option.value
           }
 
